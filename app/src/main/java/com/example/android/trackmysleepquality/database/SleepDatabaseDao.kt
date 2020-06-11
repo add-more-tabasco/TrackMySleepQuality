@@ -19,6 +19,7 @@ package com.example.android.trackmysleepquality.database
 import androidx.lifecycle.LiveData
 import androidx.room.*
 
+// this is where Room creates the kotlin functions that carry out the queries
 @Dao
 interface SleepDatabaseDao{
     @Insert
