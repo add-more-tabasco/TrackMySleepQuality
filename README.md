@@ -1,7 +1,6 @@
-TrackMySleepQuality - Starter Code
-==================================
+##TrackMySleepQuality
 
-Starter code for Android Kotlin Fundamentals Codelab 6.1 Room
+Step by step completion of a sleep tracking app from the starter code for Android Kotlin Fundamentals Codelab 6.1 Room
 
 Introduction
 ------------
@@ -9,23 +8,22 @@ Introduction
 TrackMySleepQuality is an app for recording sleep data for each night. 
 You can record a start and stop time, assign a quality rating, and clear the database. 
 
-In this codelab, working from this starter app,
-you will implement the Room database that holds the sleep data. 
-You will then use instrumented tests to verify that this backend works. 
+#Purpose
 
+In this codelab, working from [the starter app](https://github.com/google-developer-training/android-kotlin-fundamentals-starter-apps/tree/master/TrackMySleepQualityStates-Starter), I implemented the Room database that holds the sleep data. 
+As a coding challenge, I then wrote instrumented tests to verify that this backend works. I followed the remaining steps to learn how to use a database in the app.
 
-Pre-requisites
---------------
+This app demonstrates the following applied techniques:
 
-You need to know:
-
-* Building a basic user interface (UI) for an Android app, 
-  using an activity, fragments, and views.
-* Navigating between fragments and using Safe Args (a Gradle plugin) 
-  to pass data between fragments.
-* View models, view-model factories, and LiveData and its observers. 
-  These Architecture Components topics are covered in an earlier codelab in this course.
-* A basic understanding of SQL databases and the SQLite language.
+* Setting up and applying CRUD operations using a Room database and DAO
+* Writing and running tests using JUnit4
+* Multithreading and coroutines for database operations
+* Using transformation maps to efficiently format or update views based on state changes
+* Data Binding in layout files
+* MVVM architecture using ViewModel, ViewModelFactory and Fragment for each screen
+* Using Backing Properties to protect MutableLiveData
+* Using observable LiveData variables to trigger navigation
+* Navigating between fragments and using Safe Args (a Gradle plugin) to pass data between fragments.
 
 
 Getting Started

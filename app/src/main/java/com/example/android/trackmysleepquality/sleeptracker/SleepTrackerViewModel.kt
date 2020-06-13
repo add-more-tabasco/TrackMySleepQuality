@@ -45,8 +45,27 @@ class SleepTrackerViewModel(
     private var nights = database.getAllNights()
 
     val nightsString = Transformations.map(nights) {nights ->
-        formatNights(nights, application.resources)
+        formatNights(nights, application.resources) //defined in Util.kt
     }
+
+    // Start button should be enabled when tonight is null
+    val startButtonVisible = Transformations.map(tonight) {
+        it == null
+    }
+    // Stop button enabled when tonight is not null
+    val stopButtonVisible = Transformations.map(tonight) {
+        it != null
+    }
+    // clear button enabled when nights exist
+    val clearButtonVisible = Transformations.map(nights) {
+        it?.isNotEmpty()
+    }
+
+    // encapsulated event for snackbar display:
+    private var _showSnackbarEvent = MutableLiveData<Boolean>()
+    val showSnackBarEvent: LiveData<Boolean>
+        get() = _showSnackbarEvent
+
     init {
         initializeTonight()
     }
@@ -120,12 +139,18 @@ class SleepTrackerViewModel(
         uiScope.launch {
             clear()
             tonight.value = null
+            _showSnackbarEvent.value = true
         }
     }
     suspend fun clear() {
         withContext(Dispatchers.IO) {
             database.clear()
         }
+    }
+
+    // snackbar event completion:
+    fun doneShowingSnackbar() {
+        _showSnackbarEvent.value = false
     }
 
     // when viewModel is destroyed, jobs are cancelled
