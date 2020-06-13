@@ -1,17 +1,15 @@
-##TrackMySleepQuality
-
-Step by step completion of a sleep tracking app from the starter code for Android Kotlin Fundamentals Codelab 6.1 Room
 
 Introduction
 ------------
 
-TrackMySleepQuality is an app for recording sleep data for each night. 
-You can record a start and stop time, assign a quality rating, and clear the database. 
+TrackMySleepQuality is an app for recording sleep data. 
+You can record a start and stop time for each night, assign a quality rating, and clear the database. 
 
-#Purpose
+## Purpose
 
 In this codelab, working from [the starter app](https://github.com/google-developer-training/android-kotlin-fundamentals-starter-apps/tree/master/TrackMySleepQualityStates-Starter), I implemented the Room database that holds the sleep data. 
-As a coding challenge, I then wrote instrumented tests to verify that this backend works. I followed the remaining steps to learn how to use a database in the app.
+As a coding challenge, I then wrote instrumented tests to verify that this backend works. 
+I followed the remaining steps to learn how to use Room databases in an Android app.
 
 This app demonstrates the following applied techniques:
 
